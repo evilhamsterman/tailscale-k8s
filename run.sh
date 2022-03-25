@@ -34,7 +34,7 @@ else
 fi
 
 echo "Starting tailscaled"
-# tailscaled ${TAILSCALED_ARGS} &
+tailscaled ${TAILSCALED_ARGS} &
 PID=$!
 
 UP_ARGS="--accept-dns=false"
@@ -52,8 +52,7 @@ if [[ ! -z "${EXTRA_ARGS}" ]]; then
 fi
 
 echo "Running tailscale up"
-echo $UP_ARGS
-#tailscale --socket=/tmp/tailscaled.sock up ${UP_ARGS}
+tailscale --socket=/tmp/tailscaled.sock up ${UP_ARGS}
 
 if [[ ! -z "${DEST_IP}" ]]; then
   echo "Adding iptables rule for DNAT"
