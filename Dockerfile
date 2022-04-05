@@ -2,6 +2,6 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
-FROM ghcr.io/tailscale/tailscale:v1.21
+FROM ghcr.io/tailscale/tailscale:v1.20
 COPY run.sh /run.sh
 CMD "/run.sh"
